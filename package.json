@@ -29,6 +29,7 @@
   },
   "type": "module",
   "dependencies": {
-    "mongodb": "^3.6.9"
+    "mongodb": "^3.6.9",
+    "mongodb-client-encryption": "^1.2.4"
   }
 }
