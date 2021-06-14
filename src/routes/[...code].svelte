@@ -8,6 +8,7 @@
     import type { PageInfo } from "$lib/questions";
     import fetchRetry from "$lib/fetchRetry";
     import { page } from "$app/stores";
+    import { generatePrices, prices, setPrices } from "$lib/questions/shop/shopItems";
     
     const storage = window.localStorage;
 
@@ -20,6 +21,12 @@
 	let currentPage = Number(storage.getItem("page"));
 	let answers = JSON.parse(storage.getItem("answers")) || [];
     let startTime = Number(storage.getItem("startTime") || new Date().getTime());
+    if (storage.getItem("prices")) {
+        setPrices(JSON.parse(storage.getItem("prices")));
+    } else {
+        generatePrices();
+        storage.setItem("prices", JSON.stringify(prices));
+    }
 
     $: storage.setItem("alt", String(alt))
     $: storage.setItem("page", String(currentPage));
@@ -38,6 +45,7 @@
             code: $page.params["code"],
             startTime: startTime,
             endTime: new Date().getTime(),
+            prices: prices,
         });
     $: console.log(answers);
 
@@ -51,6 +59,7 @@
             code: $page.params["code"],
             startTime: startTime,
             endTime: new Date().getTime(),
+            prices: prices,
         }
         
         fetchRetry('/submit', 1000, 5, {
@@ -65,6 +74,9 @@
     function reset() {
         clearStorage();
         
+        generatePrices();
+        storage.setItem("prices", JSON.stringify(prices));
+        
         answers = [];
         currentPage = 0;
         alt = Math.random() < 0.5;
@@ -75,9 +87,9 @@
     function clearStorage() {
         storage.removeItem("answers");
         storage.removeItem("page");
-        storage.removeItem("version");
         storage.removeItem("alt");
         storage.removeItem("startTime");
+        storage.removeItem("prices")
     }
 </script>
 

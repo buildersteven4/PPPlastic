@@ -1,4 +1,7 @@
-export const shopItems : ShopItem[] = [
+import rfdc from "rfdc";
+const clone = rfdc();
+
+const shopItemsBase : ShopItem[] = [
 	{
 		"id": "cherry_tomaatjes_1",
 		"name": "Cherry tomaten",
@@ -436,6 +439,36 @@ export const shopItems : ShopItem[] = [
 	}
 ].sort(compareShopItems)
 
+export let shopItems : ShopItem[];
+export let prices: {};
+
+export function setPrices(newPrices) {
+	prices = newPrices;
+	updateShopItems();
+}
+
+export function generatePrices() {
+	let prices = {};
+
+	for (const item of shopItemsBase) {
+		prices[item.id] = Math.round((item.price + item.range*Math.random())*100)/100;
+	}
+
+	setPrices(prices);
+}
+
+function updateShopItems() {
+	shopItems = clone(shopItemsBase);
+
+	for (const item of shopItems) {
+		item.price = prices[item.id];
+	}
+}
+
+function compareShopItems(a: ShopItem, b: ShopItem) {
+	return a.name.localeCompare(b.name, 'nl', { sensitivity: 'base' })
+}
+
 export interface ShopItem {
 	id: string,
 	name: string,
@@ -450,8 +483,4 @@ export interface ShopItem {
 	vega: boolean,
 	vegan: boolean,
 	bio: boolean
-}
-
-function compareShopItems(a: ShopItem, b: ShopItem) {
-	return a.name.localeCompare(b.name, 'nl', { sensitivity: 'base' })
 }
