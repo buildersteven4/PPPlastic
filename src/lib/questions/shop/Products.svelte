@@ -15,7 +15,7 @@
     let items : ShopItem[];
     $: items = shopItems.filter(item => {
         for (const term of searchTerms) {
-            if (!item.name.toLowerCase().includes(term) && 
+            if (!item.name.toLowerCase().includes(term) &&
                 !item.tags.toLowerCase().includes(term)) {
                 return false;
             }
@@ -38,17 +38,26 @@
                 <div class="image">
                     <img src={`/products/${item.id}.jpg`} alt={`plaatje van ${item.name}`}/>
                     <div class="labels">
-                        {#if item.okCompost}
-                            <img src="/img/ok-compost.png" alt="">
+                        {#if item.houseBrand}
+                            <img src="/img/logo.svg" alt="">
                         {/if}
-                        {#if item.priceFav}
+                        {#if item.priceFavorite}
                             <img src="/img/thumb-up.png" alt="">
+                        {/if}
+                        {#if item.bio}
+                            <img src="/img/bio.png" alt="">
+                        {/if}
+                        {#if item.compost}
+                            <img src="/img/compost.png" alt="">
                         {/if}
                         {#if item.vega}
                             <img src="/img/vega.png" alt="">
-                        {/if}                        
+                        {/if}
                         {#if item.vegan}
                             <img src="/img/vegan.png" alt="">
+                        {/if}
+                        {#if item.local}
+                            <img src="/img/nl.png" alt="">
                         {/if}
                     </div>
                     <div class="price">€{item.price.toFixed(2)}</div>
@@ -120,6 +129,7 @@
     .image {
         position: relative;
         grid-column-end: span 2;
+        padding: 0px 0px 40px 0px;
     }
 
     .image>img {
@@ -137,7 +147,7 @@
     .labels {
         position: absolute;
         left: 0;
-        top: 0;
+        bottom: 0;
     }
 
     .labels>img {

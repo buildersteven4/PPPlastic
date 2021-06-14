@@ -74,7 +74,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
             {
                 type: "quiz",
                 text: "Waar staat dit label voor?",
-                image: "ok-compost",
+                image: "compost",
                 options: [
                     "De verpakking van dit product is composteerbaar",
                     "De inhoud van dit product is composteerbaar",
@@ -110,7 +110,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
             {
                 type: "quiz",
                 text: "Waar moet u een verpakking met dit label weggooien?",
-                image: "ok-compost",
+                image: "compost",
                 options: [
                     "Rest",
                     "Plastic",

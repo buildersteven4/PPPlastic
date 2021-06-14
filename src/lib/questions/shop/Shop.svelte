@@ -8,7 +8,6 @@
     export let answer: string[] = [];
     export let info: ShopInfo;
 
-    let search: string = "";
     function toggleItem(item: ShopItem) {
         if (!answer.includes(item.id)) {
             answer.push(item.id);

@@ -4,6 +4,9 @@
 
     export let answer: string = "";
     export let info: QuizInfo;
+
+    let hasChosen : boolean;
+    $: hasChosen = info.options.includes(answer);
 </script>
 
 <Question title={info.text}>
@@ -11,14 +14,14 @@
         <img src={`/img/${info.image}.png`} alt={info.image}/>
     {/if}
 
-    <div class="options" class:haschosen={answer != ""}>
+    <div class="options" class:haschosen={hasChosen}>
         {#each info.options as option, i}
                 <label 
-                    class:correct={answer != "" && i == info.correct}
+                    class:correct={hasChosen && i == info.correct}
                     class:chosen={answer == option}>
 
                     <input type=radio bind:group={answer} value={option} 
-                        disabled={answer != ""}>
+                        disabled={hasChosen}>
                     {option}
                 </label>
         {/each}

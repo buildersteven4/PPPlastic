@@ -32,6 +32,15 @@
 
     $: {currentPage; window.scrollTo(0,0);}
 
+    $: console.log({
+            version: version,
+            alt: alt,
+            code: $page.params["code"],
+            startTime: startTime,
+            endTime: new Date().getTime(),
+        });
+    $: console.log(answers);
+
 	function submit() {
 		currentPage += 1;
 
