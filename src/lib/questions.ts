@@ -1,7 +1,7 @@
-export const version = "v0.3"
+export const version = "v0.4"
 export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
     {
-        title: "Welkom",
+        title: "Welkom 👋",
         questions: [
             {
                 type: "text",
@@ -23,7 +23,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
         ]
     },
     {
-        title: "Welkom",
+        title: "Vragen over u 👀",
         questions: [
             {
                 type: "number",
@@ -57,7 +57,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
         ]
     },
     {
-        title: "Info",
+        title: "Mini Quiz 🧠",
         questions: [
             {
                 type: "quiz",
@@ -144,25 +144,39 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
         ]
     },
     {
-        title: "Shop",
+        title: "U gaat winkelen 🚗",
+        questions: [
+            {
+                type: "text",
+                text: `We gaan u zo vragen om boodschappen te doen in een fictive online supermarkt. Koop alstublieft de artikelen op het boodschappenlijstje in deze fictieve webshop alsof u echte boodschappen doet voor uwzelf, gezin en/of huisgenoten. 
+                Het is handig om gebruik te maken van de zoekfunctie rechts boven de producten.`
+            }
+        ]
+    },
+    {
+        title: "Winkelen 🛒",
         questions: [
             {
                 type: "shop",
-                text: "Stel dat uw boodschappen doet voor uwzelf, familie en/of huisgenoten. Koop alstublieft de artikelen op het boodschappenlijstje in deze fictieve webshop alsof u echte boodschappen doet."
+                text: "Stel dat uw boodschappen doet voor uwzelf, gezin en/of huisgenoten. Koop alstublieft de artikelen op het boodschappenlijstje in deze fictieve webshop alsof u echte boodschappen doet."
             }
         ]
     },
     {
-        title: "Afval",
+        title: "Afval 🚚",
         questions: [
             {
+                type: "text",
+                text: "Klik op de prullenbak waar je verpakking van de volgende producten zou weggooien."
+            },
+            {
                 type: "bins",
-                text: "gooi effe weg ofzo"
+                text: ""
             }
         ]
     },
     {
-        title: "Bedankt!",
+        title: "Bedankt! 🎶🎷",
         questions: [
             {
                 type: "text",
