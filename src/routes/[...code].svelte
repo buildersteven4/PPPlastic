@@ -132,8 +132,12 @@
 
     button {
         float: right;
-        margin: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
         scroll-snap-align: end;
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding: 0.5rem;
     }
 
     :global(p, h1, h2) {

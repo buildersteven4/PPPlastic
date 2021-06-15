@@ -22,21 +22,34 @@
         }
         return true;
     });
+
+    let searchBar;
 </script>
 
 <div class="shop paper">
     <header>
-        <div class="logo">
+        <div class="logo" on:click={() => search = ""}>
             <img src="/img/logo.svg" alt="SUPERmarkt logo"/>
             <span>UPERmarkt</span>
         </div>
-        <input class="search" bind:value={search} placeholder="Zoeken"/>
+        <div class="fill"></div>
+        <div>
+            {#if search == ""}
+                <img class="search-button" src="/img/search.svg" alt="zoeken" on:click={() => searchBar.focus()}/>
+            {:else}
+                <img class="search-button" src="/img/back.svg" alt="terug" on:click={() => search = ""}/>
+            {/if}
+            <input class="search" bind:value={search} placeholder="Zoeken" bind:this={searchBar}/>
+        </div>
     </header>
     <main class="products">
         {#each items as item}
             <div class="shop-item" class:bought={bought.includes(item.id)} on:click={() => dispatch('toggleItem', item)}>
                 <div class="image">
-                    <img src={`/products/${item.id}.jpg`} alt={`plaatje van ${item.name}`}/>
+                    <img class="product-image" src={`/products/${item.id}.jpg`} alt={`plaatje van ${item.name}`}/>
+                    {#if item.nutri != ""}
+                        <img class="nutri" src={`/img/nutri-score-${item.nutri.toUpperCase()}.svg`} alt="">
+                    {/if}
                     <div class="labels">
                         {#if item.houseBrand}
                             <img src="/img/logo.svg" alt="">
@@ -80,19 +93,26 @@
 
     header {
         display: flex;
+        flex-wrap: wrap;
         background-color:#ed1c24;
         color: #fff200;
     }
 
-    .logo {
+    header>* {
         display: flex;
         height: 24px;
         margin: 3px;
-        flex-grow: 1;
+    }
+
+    header img {
+        height: 100%;
+    }
+
+    .logo {
+        cursor: pointer;
     }
 
     .logo>img {
-        height: 100%;
         margin-right: -2px;
     }
 
@@ -102,11 +122,20 @@
         top: 2px;
     }
 
+    .fill {
+        flex-grow: 1;
+    }
+
+    .search-button {
+        cursor: pointer;
+    }
+
     .search {
         padding: 0px 5px;
-        margin: 2px;
         border: none;
         vertical-align: middle;
+        min-width: 60ch;
+        margin-left: 3px;
     }
 
     .products {
@@ -132,16 +161,24 @@
         padding: 0px 0px 40px 0px;
     }
 
-    .image>img {
+    .product-image {
         scale: 0.96;
+        width: 100%;
     }
 
-    .bought .image>img {
+    .bought .product-image {
         opacity: .5;
     }
 
-    .shop-item:hover>.image>img {
+    .shop-item:hover .product-image {
         scale: 1;
+    }
+
+    .nutri {
+        position: absolute;
+        left: 0;
+        bottom: 40px;
+        height: 40px;
     }
 
     .labels {
@@ -163,10 +200,6 @@
         padding: 5px;
         font-size: 25px;
         background-color: white;
-    }
-
-    .image>img {
-        width: 100%;
     }
 
     .label {

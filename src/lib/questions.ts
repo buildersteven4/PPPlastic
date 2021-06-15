@@ -6,7 +6,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
             {
                 type: "text",
                 text: `Beste Respondent,
-                Wij zijn Steven, Steven, Bibian en Yante, vier bachelor studenten aan de Universiteit van Amsterdam. En wij doen een klein onderzoek naar boodschappen doormiddel van deze vragenlijst. De vragenlijst duurt in totaal 5 tot 10 minuten. Je kunt doorgaan naar de volgende pagina door rechts onderin op de knop ‘volgende’ te klikken.
+                Wij zijn Steven, Steven, Bibian en Yante, vier bachelor studenten aan de Universiteit van Amsterdam, en wij doen een klein onderzoek naar boodschappen doormiddel van deze vragenlijst. De vragenlijst duurt in totaal 5 tot 10 minuten. Je kunt doorgaan naar de volgende pagina door rechts onderin op de knop ‘volgende’ te klikken.
                 (Als je vragen hebt over ons onderzoek, kun je contact met ons opnemen via dit mailadres: yante.gerbers@student.uva.nl)
                 Alvast bedankt voor het invullen, wij waarderen het zeer!`
             },
@@ -39,7 +39,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
             },
             {
                 type: "options",
-                text: "Hoeveel geeft u wekelijks uit aan boodschappen voor uw zelf en/of voor anderen?",
+                text: "Hoeveel geeft u wekelijks uit aan boodschappen voor u zelf en/of voor anderen?",
                 options: ["0 tot 25 euro", "25 tot 50 euro", "50 tot 75 euro", "75 tot 100 euro", "100 tot 125 euro", "125 tot 150 euro", "150 tot 175 euro", "175 tot 200 euro", "200 euro of meer", "Weet ik niet"],
             },
             {
@@ -148,8 +148,9 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
         questions: [
             {
                 type: "text",
-                text: `We gaan u zo vragen om boodschappen te doen in een fictive online supermarkt. Koop alstublieft de artikelen op het boodschappenlijstje in deze fictieve webshop alsof u echte boodschappen doet voor uwzelf, gezin en/of huisgenoten. 
-                Het is handig om gebruik te maken van de zoekfunctie rechts boven de producten.`
+                text: `We gaan u zo vragen om boodschappen te doen in een fictive online supermarkt. Daarvoor krijgt u een boodschappenlijstje, waarvan álle producten gekocht moeten worden. Doe alstublieft inkopen alsof u echte boodschappen doet in de supermarkt voor uzelf, gezin en/of huishouden zoals u dat normaal gesproken zou doen. 
+                Het is handig om gebruik te maken van de zoekfunctie rechts boven de producten.
+                <img src="/img/logofull.svg"/>`
             }
         ]
     },
@@ -158,7 +159,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
         questions: [
             {
                 type: "shop",
-                text: "Stel dat uw boodschappen doet voor uwzelf, gezin en/of huisgenoten. Koop alstublieft de artikelen op het boodschappenlijstje in deze fictieve webshop alsof u echte boodschappen doet."
+                text: "Stel dat u boodschappen doet voor uwzelf, gezin en/of huisgenoten. Koop alstublieft de artikelen op het boodschappenlijstje in deze fictieve webshop alsof u echte boodschappen doet."
             }
         ]
     },
@@ -167,7 +168,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
         questions: [
             {
                 type: "text",
-                text: "Klik op de prullenbak waar je verpakking van de volgende producten zou weggooien."
+                text: "We vragen u om een deel van de verpakkingen weg te gooien. Klik op de prullenbak waar je verpakking van de volgende producten zou weggooien."
             },
             {
                 type: "bins",

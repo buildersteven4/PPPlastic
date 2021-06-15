@@ -13,8 +13,8 @@
     export let info: BinsInfo;
 
     let items = [
-        "pesto_1", "diepvries_aardbeien_1", "chips_1", "pasta_penne_1", "mozzarella_1", 
-        "cherry_tomaatjes_2", "rode_paprika_2", "strooikaas_2", "rucola_2"
+        'pasta_penne_1', 'rode_paprika_2', 'mozzarella_1', 'strooikaas_2', 'diepvries_aardbeien_1', 
+        'cherry_tomaatjes_2', 'rucola_2', 'pesto_1', 'chips_1'
     ].map(id => {
         for (const item of shopItems) {
             if (id == item.id) {
@@ -29,8 +29,10 @@
     $: item = items[itemNumber];
 
     function onBinClick(bin: number) {
-        answer[bin].push(item.id);
-        answer = answer;
+        if (item) {
+            answer[bin].push(item.id);
+            answer = answer;
+        }
     }
 </script>
 
