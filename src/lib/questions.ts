@@ -1,4 +1,4 @@
-export const version = "v0.5"
+export const version = "v1.0"
 export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
     {
         title: "Welkom 👋",
