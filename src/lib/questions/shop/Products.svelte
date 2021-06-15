@@ -33,7 +33,7 @@
             <span>UPERmarkt</span>
         </div>
         <div class="fill"></div>
-        <div>
+        <div class="search-group">
             {#if search == ""}
                 <img class="search-button" src="/img/search.svg" alt="zoeken" on:click={() => searchBar.focus()}/>
             {:else}
@@ -126,6 +126,10 @@
         flex-grow: 1;
     }
 
+    .search-group {
+        flex-grow: 1;
+    }
+
     .search-button {
         cursor: pointer;
     }
@@ -134,8 +138,8 @@
         padding: 0px 5px;
         border: none;
         vertical-align: middle;
-        min-width: 60ch;
         margin-left: 3px;
+        flex-grow: 1;
     }
 
     .products {
