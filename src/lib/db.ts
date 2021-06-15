@@ -5,6 +5,5 @@ const pass = process.env.DB_PASSWORD;
 const uri = `mongodb+srv://ppplastic_app:${pass}@cluster0.4yp1e.mongodb.net/questionaire?retryWrites=true&w=majority`;
 
 export function getClient() {
-    throw "WHAT? "+JSON.stringify(process.env);
-    return new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    return new MongoClient(JSON.stringify(process.env), { useNewUrlParser: true, useUnifiedTopology: true });
 }
