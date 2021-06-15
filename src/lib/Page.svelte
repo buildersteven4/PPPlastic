@@ -22,6 +22,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>{info.title}</title>
+</svelte:head>
+
 <main>
     {#if info.title != ""}
         <h1>{info.title}</h1>
