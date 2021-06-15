@@ -6,8 +6,11 @@
             env.push([key, element])
         }
     }
+    const pass = process.env.DB_PASSWORD;
+    const uri = `mongodb+srv://ppplastic_app:${pass}@cluster0.4yp1e.mongodb.net/?retryWrites=true&w=majority`
 </script>
 
+<p>{uri}</p>
 {#each env as [k, v]}
-    {k}: {v}
+    <p>{k}: {v}</p>
 {/each}
