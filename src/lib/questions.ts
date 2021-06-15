@@ -148,7 +148,7 @@ export const {pagesInfo: standardPagesInfo, questionCount} = numberQuestions([
         questions: [
             {
                 type: "text",
-                text: `We gaan u zo vragen om boodschappen te doen in een fictive online supermarkt. Daarvoor krijgt u een boodschappenlijstje. Alle producten van het lijstje moeten eenmaal gekocht worden. Doe alstublieft inkopen alsof u echte boodschappen doet in de supermarkt voor uzelf, gezin en/of huishouden zoals u dat normaal gesproken zou doen.
+                text: `We gaan u zo vragen om boodschappen te doen in een fictieve online supermarkt. Daarvoor krijgt u een boodschappenlijstje. Alle producten van het lijstje moeten eenmaal gekocht worden. Doe alstublieft inkopen alsof u echte boodschappen doet in de supermarkt voor uzelf, gezin en/of huishouden zoals u dat normaal gesproken zou doen.
                 Het is handig om gebruik te maken van de zoekfunctie rechts boven de producten.
                 <img src="/img/logofull.svg"/>`
             }
