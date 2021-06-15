@@ -7,7 +7,7 @@
         }
     }
     const pass = process.env["DB_PASSWORD"];
-    const uri = `mongodb+srv://ppplastic_app:${pass}@cluster0.4yp1e.mongodb.net/?retryWrites=true&w=majority`
+    const uri = `mongodb+srv://ppplastic_app:${pass}@cluster0.4yp1e.mongodb.net/questionaire?retryWrites=true&w=majority`
 </script>
 
 <p>{uri}</p>
